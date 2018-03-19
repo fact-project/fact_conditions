@@ -1,5 +1,5 @@
 name: data
 description: A convinience set to get the data condition.
 conditions: [
-    'fRunTypeName = "data"'
+    fRunTypeKey = "1"
 ]

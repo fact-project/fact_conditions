@@ -10,13 +10,15 @@ def create_condition_set(conditionset=['@standard']):
     If a given condition start with '@NAME', process NAME as a set of conditions defined in a yaml file
     with the filename NAME or with the 
     """
-    data_conditions = ['fRunTypeName = "data"']
+    data_conditions = []
     for condition in conditionset:
         if condition.startswith('@'):
             # check if file exists
             fname = condition[1:]
             if os.path.isfile(fname):
-                more_conditions, config = load_condition_from_yaml_file(fname)
+                with open(fname, 'r') as f:
+                    config = yaml.safe_load(f)
+                    more_conditions = config['conditions']
             else:
                 data = None
                 if fname.endswith('.yaml'):
