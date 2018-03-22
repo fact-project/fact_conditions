@@ -20,6 +20,9 @@ setup(
     packages=['fact_conditions'],
     long_description=read('README.md'),
     install_requires=[
+        pyyaml,
+        click,
+        peewee
     ],
     package_data={'fact_conditions': ['conditions/*.yaml']},
     entry_points={
