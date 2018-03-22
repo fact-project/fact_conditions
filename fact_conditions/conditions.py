@@ -40,6 +40,10 @@ def create_condition_set(conditionset=['@standard']):
 
 from peewee import SQL
 def apply_to_query(query, conditionSets):
+    """
+    Given a peewee query, creates the final condition set with create_condition_set from the given sets
+    and applies them to the query.
+    """
     if type(conditionSets) is str:
         conditionSets = [conditionSets]
     conditionSet = create_condition_set(conditionSets)
