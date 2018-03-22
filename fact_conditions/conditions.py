@@ -38,6 +38,15 @@ def create_condition_set(conditionset=['@standard']):
             data_conditions.append(condition)
     return data_conditions
 
+from peewee import SQL
+def apply_to_query(query, conditionSets):
+    if type(conditionSets) is str:
+        conditionSets = [conditionSets]
+    conditionSet = create_condition_set(conditionSets)
+    for c in conditionSet:
+        query = query.where(SQL(c))
+    return query
+    
 """conditions['darknight'] = [
     'fCurrentsMedMean < 20',
     'fMoonZenithDistance > 100',
