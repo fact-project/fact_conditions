@@ -10,7 +10,7 @@ def read(fname):
 
 setup(
     name = "fact_conditions",
-    version = "0.0.1",
+    version = "0.1.0",
     author = "Michael Bulinski",
     author_email = "michael.bulinski@udo.edu",
     description = ("Functions to load conditions for the fact quary. Also includes a veriety of given files."),
