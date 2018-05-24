@@ -1,7 +1,7 @@
 name: standard
 description: Standard condition set used by erna
 conditions: [
-    fRunTypeName = "data"
+    fRunTypeName = "data",
     fZenithDistanceMean < 30,
     fTriggerRateMedian > 40,
     fTriggerRateMedian < 85,
